@@ -52,7 +52,7 @@ String no = request.getParameter("no");
 				<h2>방명록</h2>
 				<ul>
 					<li>일반방명록</li>
-					<li>ajax방명록</li>
+					<li>방명록</li>
 				</ul>
 			</div>
 			<!-- //aside -->
@@ -88,8 +88,8 @@ String no = request.getParameter("no");
 								<td><a href="/guestbook2/gbc">[메인으로 돌아가기]</a></td>
 							</tr>
 						</table>
-						<input type='hidden' name="" value="">
-						<input type='hidden' name="" value="">
+						<input type='hidden' name="no" value="<%=no%>">
+						<input type='hidden' name="action" value="deleteForm">
 					</form>
 					
 				</div>

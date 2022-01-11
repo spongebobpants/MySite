@@ -5,7 +5,7 @@
 <%@ page import="com.javaex.vo.GuestbookVo" %>
 
 <%
-System.out.println("addList.jsp 시작");
+System.out.println("addList.jsp");
 //guestbook List 가져오기
 List<GuestbookVo> guestbookList = (List<GuestbookVo>)request.getAttribute("gList");
 
@@ -63,7 +63,6 @@ System.out.println(guestbookList);
 				<h2>방명록</h2>
 				<ul>
 					<li>일반방명록</li>
-					<li>ajax방명록</li>
 				</ul>
 			</div>
 			<!-- //aside -->
