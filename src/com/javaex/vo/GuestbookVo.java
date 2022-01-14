@@ -53,7 +53,7 @@ public class GuestbookVo {
 		return name;
 	}
 
-	public void setId(String id) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

@@ -11,7 +11,7 @@ List<GuestbookVo> guestbookList = (List<GuestbookVo>)request.getAttribute("gList
 
 System.out.println(guestbookList);
 
-//List<GuestbookVo> gList = (List<GuestbookVo>)request.getAttribute("gList");
+//http://localhost:8088/MySite/guestbook?action=addList
 %>
 
 <!DOCTYPE html>

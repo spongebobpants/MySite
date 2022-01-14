@@ -2,7 +2,9 @@
 
 <%
 String no = request.getParameter("no");
+//http://localhost:8088/MySite/guestbook?action=deleteForm
 %>
+
 
 <!DOCTYPE html>
 <html>

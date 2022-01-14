@@ -37,40 +37,34 @@ public class UserController extends HttpServlet {
 
 			// join
 		} else if ("join".equals(action)) {
+			//파라미터값 가져오기
 			System.out.println("user-join");
 			String id = request.getParameter("id");
 			String password = request.getParameter("password");
 			String name = request.getParameter("name");
 			String gender = request.getParameter("gender");
-
+			
+			//파라미터-> vo로 만들기
 			UserVo userVo = new UserVo(id, password, name, gender);
-
 			// userVo import check
 			System.out.println(userVo);
 			
+			//userDao의 insert()로 저장하기(회원가입하기)
 			UserDao userDao = new UserDao();
 			userDao.insert(userVo);
+			WebUtil.forward(request, response, "/WEB-INF/views/user/joinOk.jsp");
 			
-		} else if ("joinOk".equals(action)) {
-			System.out.println("user > joinOk 시작");
-
-		
+			//login
 		} else if ("loginForm".equals(action)) {
-			System.out.println("main > loginForm 시작");
+			System.out.println("main -> loginForm");
+			//forward
 			WebUtil.forward(request, response, "/WEB-INF/views/user/loginForm.jsp");
 
-		} else if ("addList".equals(action)) {
-			System.out.println("user > addList 시작");
-
-			GuestbookDao guestbookDao = new GuestbookDao();
-			List<GuestbookVo> guestbookList = guestbookDao.getList();
-
-			request.setAttribute("gList", guestbookList);
-			WebUtil.forward(request, response, "/WEB-INF/views/guestbook/addList.jsp");
-
-		} else {
-			System.out.println("파라미터가 잘못 되었습니다.");
-
+		}else if("login".equals(action)) {
+			String id = request.getParameter("id");
+			String password = request.getParameter("password");
+		
+			UserDao userDao = new UserDao();
 		}
 	}
 

@@ -26,8 +26,8 @@
 			</ul>
 			-->	
 			<ul>
-				<li><a href="" class="btn_s">로그인</a></li>
-				<li><a href="" class="btn_s">회원가입</a></li>
+				<li><a href="/MySite/user?action=loginForm" class="btn_s">로그인</a></li>
+				<li><a href="/MySite/user?action=joinForm" class="btn_s">회원가입</a></li>
 			</ul>
 			
 		</div>
