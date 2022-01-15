@@ -8,7 +8,7 @@
 <!-- tomcat module 인터넷 주소 mysite 디렉토리 아님  -->
 <link href="/MySite/assets/css/main.css" rel="stylesheet" type="text/css">
 
-</head>
+</head> 
 <body>
 	<div id="wrap">
 

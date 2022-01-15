@@ -43,7 +43,7 @@ public class UserController extends HttpServlet {
 			//파라미터-> vo로 만들기
 			UserVo userVo = new UserVo(id, password, name, gender);
 			// userVo import check
-			System.out.println(userVo);
+			//System.out.println(userVo);
 			
 			//userDao의 insert()로 저장하기(회원가입하기)
 			UserDao userDao = new UserDao();
