@@ -1,12 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+	<%
+	String result = request.getParameter("result");
+	%>
+
+	<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/MySite/assets/css/mysite.css" rel="stylesheet" type="text/css">
-<!-- tomcat module 인터넷 주소 mysite 디렉토리 아님  -->
-<link href="/MySite/assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="/MySite/assets/css/user.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -25,8 +30,8 @@
 			</ul>
 			-->	
 			<ul>
-				<li><a href="/MySite/user?action=loginForm" class="btn_s">로그인</a></li>
-				<li><a href="/MySite/user?action=joinForm" class="btn_s">회원가입</a></li>
+				<li><a href="" class="btn_s">로그인</a></li>
+				<li><a href="" class="btn_s">회원가입</a></li>
 			</ul>
 			
 		</div>
@@ -70,7 +75,7 @@
 	
 				<div id="user">
 					<div id="loginForm">
-						<form action="" method="">
+						<form action="/MySite/user" method="get">
 	
 							<!-- 아이디 -->
 							<div class="form-group">
@@ -83,13 +88,14 @@
 								<label class="form-text" for="input-pass">비밀번호</label> 
 								<input type="text" id="input-pass" name="" value="" placeholder="비밀번호를 입력하세요"	>
 							</div>
-	
-							
+							<%if("fail".equals(result)){%>
+							<p>로그인에 실패했습니다 다시 로그인 해주세요</p>
+							<%}%>
 							<!-- 버튼영역 -->
 							<div class="button-area">
 								<button type="submit" id="btn-submit">로그인</button>
 							</div>
-							
+							<input type="text" name="action" value="login">
 						</form>
 					</div>
 					<!-- //loginForm -->

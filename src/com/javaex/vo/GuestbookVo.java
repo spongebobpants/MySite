@@ -2,19 +2,16 @@ package com.javaex.vo;
 
 public class GuestbookVo {
 	
-	//field
 	private int no;
 	private String name;
 	private String password;
 	private String content;
 	private String regDate;
-	
-	
-	//constructor
-	public GuestbookVo() {}
+
+	public GuestbookVo() {
+	}
 
 	public GuestbookVo(int no, String name, String password, String content, String regDate) {
-		super();
 		this.no = no;
 		this.name = name;
 		this.password = password;
@@ -22,25 +19,12 @@ public class GuestbookVo {
 		this.regDate = regDate;
 	}
 
-	public GuestbookVo(String name, String password, String content, String regDate) {
-		this.name = name;
-		this.password = password;
-		this.content = content;
-		this.regDate = regDate;
-	}
-	
 	public GuestbookVo(String name, String password, String content) {
 		this.name = name;
 		this.password = password;
 		this.content = content;
 	}
-	
-	public GuestbookVo(int no, String password) {
-		this.no = no;
-		this.password = password;
-	}
-		
-	//g.s
+
 	public int getNo() {
 		return no;
 	}
@@ -81,11 +65,9 @@ public class GuestbookVo {
 		this.regDate = regDate;
 	}
 
-	//method
 	@Override
 	public String toString() {
-		return "GuestbookVo [no=" + no + ", name=" + name + ", password=" + password + ", content=" + content + ", regDate="
-				+ regDate + "]";
+		return "GuestbookVo [no=" + no + ", name=" + name + ", password=" + password + ", content=" + content
+				+ ", regDate=" + regDate + "]";
 	}
-
 }

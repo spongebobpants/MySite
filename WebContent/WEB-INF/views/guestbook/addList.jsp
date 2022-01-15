@@ -82,7 +82,7 @@ System.out.println(guestbookList);
 				<!-- //content-head -->
 
 				<div id="guestbook">
-					<form action="/mysite/guest" method="get">
+					<form action="/MySite/guest" method="get">
 						<table id="guestAdd">
 							<colgroup>
 								<col style="width: 70px;">
@@ -130,7 +130,7 @@ System.out.println(guestbookList);
 							<td><%=guestbookList.get(i).getNo()%></td>
 							<td><%=guestbookList.get(i).getName()%></td>
 							<td><%=guestbookList.get(i).getRegDate()%></td>
-							<td><a href="/mysite/guest?action=deleteForm&no=<%=guestbookList.get(i).getNo()%>">[삭제]</a></td>
+							<td><a href="/MySite/guest?action=deleteForm&no=<%=guestbookList.get(i).getNo()%>">[삭제]</a></td>
 						</tr>
 						<tr>
 							<td colspan=4 class="text-left"><%=guestbookList.get(i).getContent()%></td>

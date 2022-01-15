@@ -37,13 +37,13 @@ public class GuestbookController extends HttpServlet {
 			// vo
 			// dao에 새 메모리 추가
 			GuestbookDao guestbookDao = new GuestbookDao();
-			GuestbookVo guestbookVo = new GuestbookVo(name, password, content, regDate);
+			GuestbookVo guestbookVo = new GuestbookVo(name, password, content);
 			System.out.println(guestbookVo);
 			// insert
 			guestbookDao.insert(guestbookVo);
 
 			// redirect
-			WebUtil.redirect(request, response, "/mysite/guestbook");
+			WebUtil.redirect(request, response, "/MySite/guestbook");
 
 		} else if ("deleteForm".equals(action)) {
 			System.out.println("guestbook = deleteForm");

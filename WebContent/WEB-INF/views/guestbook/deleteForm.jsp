@@ -87,7 +87,7 @@ String no = request.getParameter("no");
 								<td>비밀번호</td>
 								<td><input type="password" name="pass"></td>
 								<td class="text-left"><button type="submit">삭제</button></td>
-								<td><a href="/guestbook2/gbc">[메인으로 돌아가기]</a></td>
+								<td><a href="/MySite/main">[메인으로 돌아가기]</a></td>
 							</tr>
 						</table>
 						<input type='hidden' name="no" value="<%=no%>">
