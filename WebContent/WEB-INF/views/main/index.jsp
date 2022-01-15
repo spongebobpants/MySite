@@ -16,6 +16,9 @@
 <body>
 	<h1>MySite</h1>
 	<div id="wrap">
+		<!-- header + nav -->
+		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+
 
 		<!-- //header -->
 
@@ -56,8 +59,7 @@
 		</div>
 		<!-- //container -->
 
-
-		<div id="footer">Copyright ⓒ 2020 황일영. All right reserved</div>
+		<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 		<!-- //footer -->
 
 	</div>
