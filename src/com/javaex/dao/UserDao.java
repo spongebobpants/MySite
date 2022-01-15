@@ -59,7 +59,7 @@ public class UserDao {
 
 //메서드 저장메서드 (회원가입)
 	public int insert(UserVo userVo) {
-
+//void -> insert 성공하면 0값 주려고 int로 변
 		int count = 0;
 
 		getConnection();
@@ -67,13 +67,8 @@ public class UserDao {
 		try {
 //			sql 문자열
 			String query = "";
-			query += " INSERT INTO users VALUES ( ";
-			query += " 			seq_users_no.nextval "; // no
-			query += " 			, ? "; // id ?넣을때 따옴표 넣지않기 '?'
-			query += " 			, ? "; // password
-			query += " 			, ? "; // name
-			query += " 			, ? "; // gender
-			query += " ) ";
+			query += " insert into users ";
+			query += " values(seq_users_no.nextval, ?, ?, ?, ?) ";
 
 //			sql 쿼리
 			pstmt = conn.prepareStatement(query);
@@ -114,8 +109,8 @@ public class UserDao {
 //		sql문 준비 바인딩 실행
 //		문자열
 			String query = "";
-			query += " select	no, ";
-			query += " 			name ";
+			query += " select	no ";
+			query += " 			,name ";
 			query += " from users ";
 			query += " where id = ? ";
 			query += " and password = ?	";
