@@ -24,7 +24,7 @@ UserVo authUser = (UserVo) session.getAttribute("authUser");
 		<c:otherwise>
 			<!-- login success -->
 			<ul>
-				<li>${sessionScope.authUser.name}님안녕하세요^^</li>
+				<li>${sessionScope.authUser.name}님 안녕하세요^^</li>
 				<!-- sessionScope도 생략가능  -->
 				<li><a href="/MySite/user?action=logout" class="btn_s">로그아웃</a></li>
 				<li><a href="" class="btn_s">회원정보수정</a></li>
