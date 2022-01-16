@@ -2,4 +2,4 @@
 	pageEncoding="UTF-8"%>
 
 <!-- footer -->
-<div id="footer">Copyright ⓒ 2020 황일영. All right reserved</div>
+<div id="footer">Copyright ⓒ 2022 김지연. All right reserved</div>

@@ -72,7 +72,9 @@ public class UserController extends HttpServlet {
 			}else {//login success
 				System.out.println("Login success");
 				HttpSession session = request.getSession();
+				//세션 생성 
 				session.setAttribute("authUser", authVo);
+				//session.setAttribute("ID", "abcd");
 				WebUtil.redirect(request, response, "/MySite/main");
 			}
 		}else if("logout".equals(action)) {
@@ -80,6 +82,7 @@ public class UserController extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.removeAttribute("authUser");
 			session.invalidate();
+			//invalidate() ->  세션 종료
 			WebUtil.redirect(request, response, "/MySite/main");
 		}
 	}
