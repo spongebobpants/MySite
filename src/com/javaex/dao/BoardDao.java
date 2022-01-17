@@ -140,7 +140,7 @@ public class BoardDao {
 	}
 
 	// delete
-	public void delete(int no, String password) {
+	public void delete(int no, int userNo) {
 		int count = 0;
 		getConnection();
 
@@ -156,7 +156,7 @@ public class BoardDao {
 
 			// 바인딩 (?)
 			pstmt.setInt(1, no); // 1
-			pstmt.setString(2, password); // 2
+			pstmt.setInt(2, userNo); // 2
 
 			count = pstmt.executeUpdate();
 
@@ -167,4 +167,91 @@ public class BoardDao {
 		}
 		close();
 	}
+	
+	//read
+	public BoardVo read(int index) {
+
+		BoardVo boardVo = null;
+
+		try {
+
+			getConnection();
+
+			// 3. SQL문 준비 / 바인딩 / 실행
+			String query = "";
+			query += " select  bd.no ";
+			query += " title, ";
+			query += " content, ";
+			query += " hit, ";
+			query += " to_char(reg_date, 'yyyy-mm-dd hh:mi:ss') regDate, ";
+			query += " userNo, ";
+			query += " id, ";
+			query += " password, ";
+			query += " name, ";
+			query += " from board bd, users ur ";
+			query += " where bd.user_no = ur.no ";
+			query += " and bd.no = ? ";
+
+			System.out.println(query);
+
+			pstmt = conn.prepareStatement(query);
+
+			pstmt.setInt(1, index);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				int no = rs.getInt("no");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				int hit = rs.getInt("hit");
+				String regDate = rs.getString("regDate");
+				int userNo = rs.getInt("userNo");
+				String id = rs.getString("id");
+				String password = rs.getString("password");
+				String name = rs.getString("name");
+
+				boardVo = new BoardVo(no, title, content, hit, regDate, userNo, id, password, name);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		}
+
+		close();
+
+		return boardVo;
+	} // read
+	public void insert (BoardVo boardVo) {
+
+		try {
+			getConnection();
+
+			String query = "";
+			query += " insert into board  ";
+			query += " values (seq_board_no.nextval, "; 
+			query += " ?, "; 
+			query += " ?, "; 
+			query += " 0, "; 
+			query += " sysdate, "; 
+			query += " ?) "; 
+
+			System.out.println(query);
+
+			pstmt = conn.prepareStatement(query);
+		
+			pstmt.setString(1, boardVo.getTitle());
+			pstmt.setString(2, boardVo.getContent());
+			pstmt.setInt(3, boardVo.getNo());
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		}
+
+		close();
+
+	} // insert
+
 }

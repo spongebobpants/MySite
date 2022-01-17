@@ -1,13 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
+<%@ page import="java.util.List"%>
+<%@ page import="com.javaex.vo.BoardVo"%>
+<%@ page import="com.javaex.vo.UserVo"%>
+
+<%
+
+System.out.println("Board.jsp");
+
+List<BoardVo> boardList = (List<BoardVo>) request.getAttribute("bList");
+UserVo authUser = (UserVo) session.getAttribute("authUser");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="/MySite/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<title>board</title>
+<link href="/MySite/assets/css/mysite.css" rel="stylesheet"
+	type="text/css">
 <!-- tomcat module 인터넷 주소 mysite 디렉토리 아님  -->
-<link href="/MySite/assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="/MySite/assets/css/board.css" rel="stylesheet"
+	type="text/css">
 
 </head>
 <body>
@@ -24,15 +39,15 @@
 				<li><a href="" class="btn_s">로그아웃</a></li>
 				<li><a href="" class="btn_s">회원정보수정</a></li>
 			</ul>
-			-->	
+			-->
 			<ul>
 				<li><a href="/MySite/user?action=loginForm" class="btn_s">로그인</a></li>
-				<li><a href=/MySite/user?action=joinForm"" class="btn_s">회원가입</a></li>
+				<li><a href="/MySite/user?action=joinForm" class="btn_s">회원가입</a></li>
 			</ul>
-			
+
 		</div>
 		<!-- //header -->
-		
+
 		<div id="nav">
 			<ul class="clearfix">
 				<li><a href="">입사지원서</a></li>
@@ -67,16 +82,16 @@
 					<div class="clear"></div>
 				</div>
 				<!-- //content-head -->
-	
+
 				<div id="board">
 					<div id="list">
-						<form action="" method="">
+						<form action="/MySite/board" method="get">
 							<div class="form-group text-right">
 								<input type="text">
 								<button type="submit" id=btn_search>검색</button>
 							</div>
 						</form>
-						<table >
+						<table>
 							<thead>
 								<tr>
 									<th>번호</th>
@@ -130,7 +145,7 @@
 								</tr>
 							</tbody>
 						</table>
-			
+
 						<div id="paging">
 							<ul>
 								<li><a href="">◀</a></li>
@@ -146,12 +161,12 @@
 								<li><a href="">10</a></li>
 								<li><a href="">▶</a></li>
 							</ul>
-							
-							
+
+
 							<div class="clear"></div>
 						</div>
 						<a id="btn_write" href="">글쓰기</a>
-					
+
 					</div>
 					<!-- //list -->
 				</div>
@@ -161,11 +176,9 @@
 
 		</div>
 		<!-- //container  -->
-		
 
-		<div id="footer">
-			Copyright ⓒ 2020 황일영. All right reserved
-		</div>
+
+		<div id="footer">Copyright ⓒ 2020 황일영. All right reserved</div>
 		<!-- //footer -->
 	</div>
 	<!-- //wrap -->

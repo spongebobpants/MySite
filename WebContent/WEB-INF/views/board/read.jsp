@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
+<%@ page import="java.util.List"%>
+<%@ page import="com.javaex.vo.BoardVo"%>
+<%@ page import="com.javaex.vo.UserVo"%>
+
+<%
+BoardVo boardVo = (BoardVo) request.getAttribute("boardVo");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="/MySite/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<link href="/MySite/assets/css/mysite.css" rel="stylesheet"
+	type="text/css">
 <!-- tomcat module 인터넷 주소 mysite 디렉토리 아님  -->
-<link href="/MySite/assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="/MySite/assets/css/board.css" rel="stylesheet"
+	type="text/css">
 
 </head>
 <body>
@@ -24,12 +35,12 @@
 				<li><a href="" class="btn_s">로그아웃</a></li>
 				<li><a href="" class="btn_s">회원정보수정</a></li>
 			</ul>
-			-->	
+			-->
 			<ul>
 				<li><a href="" class="btn_s">로그인</a></li>
 				<li><a href="" class="btn_s">회원가입</a></li>
 			</ul>
-			
+
 		</div>
 		<!-- //header -->
 
@@ -67,51 +78,42 @@
 					<div class="clear"></div>
 				</div>
 				<!-- //content-head -->
-	
+
 				<div id="board">
 					<div id="read">
-						<form action="#" method="get">
+						<form action="/MyStie/board" method="get">
 							<!-- 작성자 -->
 							<div class="form-group">
-								<span class="form-text">작성자</span>
-								<span class="form-value">정우성</span>
+								<span class="form-text">작성자</span> <span class="form-value">정우성</span>
 							</div>
-							
+
 							<!-- 조회수 -->
 							<div class="form-group">
-								<span class="form-text">조회수</span>
-								<span class="form-value">123</span>
+								<span class="form-text">조회수</span> <span class="form-value">123</span>
 							</div>
-							
+
 							<!-- 작성일 -->
 							<div class="form-group">
-								<span class="form-text">작성일</span>
-								<span class="form-value">2020-03-02</span>
+								<span class="form-text">작성일</span> <span class="form-value">2020-03-02</span>
 							</div>
-							
+
 							<!-- 제목 -->
 							<div class="form-group">
-								<span class="form-text">제 목</span>
-								<span class="form-value">여기에는 글제목이 출력됩니다.</span>
+								<span class="form-text">제 목</span> <span class="form-value">여기에는
+									글제목이 출력됩니다.</span>
 							</div>
-						
+
 							<!-- 내용 -->
 							<div id="txt-content">
-								<span class="form-value" >
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
-									여기에는 본문내용이 출력됩니다.<br>
+								<span class="form-value"> 여기에는 본문내용이 출력됩니다.<br>
+									여기에는 본문내용이 출력됩니다.<br> 여기에는 본문내용이 출력됩니다.<br> 여기에는
+									본문내용이 출력됩니다.<br> 여기에는 본문내용이 출력됩니다.<br> 여기에는 본문내용이
+									출력됩니다.<br> 여기에는 본문내용이 출력됩니다.<br> 여기에는 본문내용이 출력됩니다.<br>
 								</span>
 							</div>
-							
-							<a id="btn_modify" href="">수정</a>
-							<a id="btn_modify" href="">목록</a>
-							
+
+							<a id="btn_modify" href="">수정</a> <a id="btn_modify" href="">목록</a>
+
 						</form>
 						<!-- //form -->
 					</div>
@@ -124,9 +126,7 @@
 		</div>
 		<!-- //container  -->
 
-		<div id="footer">
-			Copyright ⓒ 2020 황일영. All right reserved
-		</div>
+		<div id="footer">Copyright ⓒ 2020 황일영. All right reserved</div>
 		<!-- //footer -->
 	</div>
 	<!-- //wrap -->

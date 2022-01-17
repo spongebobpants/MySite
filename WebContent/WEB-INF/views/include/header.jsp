@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.javaex.vo.UserVo"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 <%
 UserVo authUser = (UserVo) session.getAttribute("authUser");
@@ -10,24 +10,23 @@ UserVo authUser = (UserVo) session.getAttribute("authUser");
 
 <div id="header" class="clearfix">
 	<h1>
-		<a href="/MySite/main">MySite</a>
+		<a href="http://localhost:8088/MySite/main">MySite</a>
 	</h1>
 
 	<c:choose>
 		<c:when test="${empty sessionScope.authUser }">
-			<!-- login Failed -->
 			<ul>
 				<li><a href="/MySite/user?action=loginForm" class="btn_s">로그인</a></li>
-				<li><a href="" class="btn_s">회원가입</a></li>
+				<li><a href="/MySite/user?action=joinForm" class="btn_s">회원가입</a></li>
 			</ul>
 		</c:when>
 		<c:otherwise>
-			<!-- login success -->
+
 			<ul>
 				<li>${sessionScope.authUser.name}님 안녕하세요^^</li>
-				<!-- sessionScope도 생략가능  -->
+
 				<li><a href="/MySite/user?action=logout" class="btn_s">로그아웃</a></li>
-				<li><a href="" class="btn_s">회원정보수정</a></li>
+				<li><a href="/MySite/user?action=modifyForm&no=<%=authUser.getNo()%>" class="btn_s">회원정보수정</a></li>
 			</ul>
 		</c:otherwise>
 	</c:choose>
