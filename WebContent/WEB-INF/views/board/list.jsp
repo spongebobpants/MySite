@@ -7,7 +7,6 @@
 
 <%
 
-System.out.println("Board.jsp");
 
 List<BoardVo> boardList = (List<BoardVo>) request.getAttribute("bList");
 UserVo authUser = (UserVo) session.getAttribute("authUser");
